@@ -72,10 +72,7 @@ function App() {
       onMouseDown={() => handlePress(command)}
       onMouseUp={handleRelease}
       onMouseLeave={handleRelease} // Stop if mouse leaves button area
-      onTouchStart={(e: React.TouchEvent) => {
-        // Prevent default touch behavior if needed, though 'touch-action: none' in CSS handles most of it
-        handlePress(command);
-      }}
+      onTouchStart={() => handlePress(command)}
       onTouchEnd={handleRelease}
     >
       {label}
