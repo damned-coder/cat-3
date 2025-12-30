@@ -6,10 +6,11 @@ import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set } from "firebase/database";
 
 // 2. Firebase Configuration
-// Replace these values with your actual Firebase config from the console
 const firebaseConfig = {
   apiKey: "AIzaSyDr1UDFHc1dZ9Nnu3lW8MiLGde2exHNXI0",
   authDomain: "espproject1-b5267.firebaseapp.com",
+  databaseURL:
+    "https://espproject1-b5267-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "espproject1-b5267",
   storageBucket: "espproject1-b5267.firebasestorage.app",
   messagingSenderId: "270907351918",
