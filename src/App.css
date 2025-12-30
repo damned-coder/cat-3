@@ -1,0 +1,67 @@
+/* App.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none; /* Critical for long-press behavior */
+}
+
+.app-container {
+  background-color: #0f172a; /* Dark Blue */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  touch-action: none; /* Prevents mobile scrolling while driving */
+}
+
+.title {
+  margin-bottom: 2rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.control-pad {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(4, 100px); 
+  gap: 15px;
+}
+
+.control-btn {
+  background-color: #0ea5e9; /* Sky Blue */
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.1s, background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-btn:active {
+  transform: scale(0.95);
+  background-color: #38bdf8;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.status-display {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: #94a3b8;
+}
+
+@media (max-width: 400px) {
+  .control-pad {
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(4, 80px);
+    gap: 10px;
+  }
+}
