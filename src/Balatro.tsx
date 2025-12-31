@@ -122,7 +122,7 @@ void main() {
 
 export default function Balatro({
   spinRotation = -2.0,
-  spinSpeed = 7.0,
+  spinSpeed = 10.0,
   offset = [0.0, 0.0],
   color1 = "#DE443B",
   color2 = "#006BB4",
@@ -132,7 +132,7 @@ export default function Balatro({
   spinAmount = 0.25,
   pixelFilter = 745.0,
   spinEase = 1.0,
-  isRotate = false,
+  isRotate = true,
   mouseInteraction = true,
 }: BalatroProps) {
   const containerRef = useRef<HTMLDivElement>(null);
