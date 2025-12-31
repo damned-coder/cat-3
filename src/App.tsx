@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
+import Balatro from "./Balatro";
 
+<Balatro isRotate={false} mouseInteraction={true} pixelFilter={700} />;
 // 1. Import Firebase functions
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set } from "firebase/database";
