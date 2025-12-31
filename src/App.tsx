@@ -83,29 +83,75 @@ function App() {
   );
 
   return (
-    <div className="app-container">
-      <h1 className="title">RC Car Controller</h1>
-
-      <div className="control-pad">
-        {/* Layout: 3 columns x 4 rows */}
-
-        {/* Forward: Row 1, Center */}
-        <ControlButton label="▲" command="FORWARD" gridArea="1 / 2 / 2 / 3" />
-
-        {/* Left: Row 2, Left */}
-        <ControlButton label="◀" command="LEFT" gridArea="2 / 1 / 3 / 2" />
-
-        {/* Right: Row 2, Right */}
-        <ControlButton label="▶" command="RIGHT" gridArea="2 / 3 / 3 / 4" />
-
-        {/* Backward: Row 3, Center */}
-        <ControlButton label="▼" command="BACKWARD" gridArea="3 / 2 / 4 / 3" />
-
-        {/* Spin: Row 4, Center */}
-        <ControlButton label="↺ Spin" command="SPIN" gridArea="4 / 2 / 5 / 3" />
+    <div
+      className="app-container"
+      style={{ position: "relative", overflow: "hidden" }}
+    >
+      {/* 2. Add the Balatro Background */}
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          zIndex: 0,
+        }}
+      >
+        <Balatro
+          isRotate={true}
+          mouseInteraction={true}
+          pixelFilter={920} // Value from your URL
+          color3="#1d1d1d" // Value from your URL
+        />
       </div>
+      <div
+        style={{
+          position: "relative",
+          zIndex: 1,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <h1 className="title">RC Car Controller</h1>
+        <div
+          style={{
+            position: "relative",
+            zIndex: 1,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          {/* Layout: 3 columns x 4 rows */}
 
-      <div className="status-display">Status: {status}</div>
+          {/* Forward: Row 1, Center */}
+          <ControlButton label="▲" command="FORWARD" gridArea="1 / 2 / 2 / 3" />
+
+          {/* Left: Row 2, Left */}
+          <ControlButton label="◀" command="LEFT" gridArea="2 / 1 / 3 / 2" />
+
+          {/* Right: Row 2, Right */}
+          <ControlButton label="▶" command="RIGHT" gridArea="2 / 3 / 3 / 4" />
+
+          {/* Backward: Row 3, Center */}
+          <ControlButton
+            label="▼"
+            command="BACKWARD"
+            gridArea="3 / 2 / 4 / 3"
+          />
+
+          {/* Spin: Row 4, Center */}
+          <ControlButton
+            label="↺ Spin"
+            command="SPIN"
+            gridArea="4 / 2 / 5 / 3"
+          />
+        </div>
+
+        <div className="status-display">Status: {status}</div>
+      </div>
     </div>
   );
 }
